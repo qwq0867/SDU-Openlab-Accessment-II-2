@@ -1,0 +1,23 @@
+{
+    "name":"Dark Mode for balduck",
+    "menifest_version":2,
+    "version":"0.9",
+    "descripition":"实现bilibili网站观看视频的暗黑模式",
+    "default_locale":"zh-cn"
+    //"icons":
+    "browser_action":
+    {
+        "default_title":"b站暗黑模式[不可用]",
+        "default_popup":"popupdefault.html",
+    },
+    "page_action":
+    {
+        "default_title":"b站暗黑模式",
+        "default_popup":"popup.html",
+    },
+    "content_scripts":[
+        {
+            "js":
+        }
+    ]
+}
