@@ -1,23 +1,31 @@
 {
+    "manifest_version": 2,
+    "default_locale":"zh_CN",
     "name":"Dark Mode for balduck",
-    "menifest_version":2,
     "version":"0.9",
     "descripition":"实现bilibili网站观看视频的暗黑模式",
-    "default_locale":"zh-cn"
-    //"icons":
+    "icons":
+    {
+        "16":"res/icon16.png",
+        "48":"res/icon48.png",
+        "128":"res/icon128.png"
+    },
     "browser_action":
     {
-        "default_title":"b站暗黑模式[不可用]",
-        "default_popup":"popupdefault.html",
-    },
-    "page_action":
-    {
+        "default_icon":"res/icon64.png",
         "default_title":"b站暗黑模式",
-        "default_popup":"popup.html",
+        "default_popup":"popup.html"
     },
     "content_scripts":[
         {
-            "js":
+            "matches":["https://www.bilibili.com/*","https://www.bilibili.com/"],
+            "js" : ["darkmode.js"]
         }
+    ],
+    "permissions":
+    [
+
+        "tabs"
+
     ]
 }
