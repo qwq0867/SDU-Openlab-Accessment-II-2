@@ -16,6 +16,10 @@
         "default_title":"b站暗黑模式",
         "default_popup":"popup.html"
     },
+    "background":
+    {
+        "service_worker":"background.js"
+    },
     "content_scripts":[
         {
             "matches":["https://www.bilibili.com/*","https://www.bilibili.com/"],
@@ -25,7 +29,11 @@
     "permissions":
     [
 
-        "tabs"
-
+        "tabs",
+        "scripting",
+        "activeTab",
+        "declarativeContent", 
+        "storage",
+        "https://zhuanlan.zhihu.com/"
     ]
 }
