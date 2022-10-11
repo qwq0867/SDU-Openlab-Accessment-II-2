@@ -18,12 +18,14 @@
     },
     "background":
     {
-        "service_worker":"background.js"
+        "scripts":["background.js"],
+        "persistent":true
     },
     "content_scripts":[
         {
             "matches":["https://www.bilibili.com/*","https://www.bilibili.com/"],
-            "js" : ["darkmode.js"]
+            "js" : ["autodark.js"],
+            "run_at":"document_end"
         }
     ],
     "permissions":
@@ -34,6 +36,7 @@
         "activeTab",
         "declarativeContent", 
         "storage",
-        "https://zhuanlan.zhihu.com/"
+        "https://www.bilibili.com/*",
+        "https://www.bilibili.com/"
     ]
 }
