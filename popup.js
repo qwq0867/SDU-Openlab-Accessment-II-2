@@ -4,10 +4,15 @@
 const bg=chrome.extension.getBackgroundPage();
 let isDark=bg.needDark;
 let myButton=document.getElementById("a1");
+let mySpeed=document.getElementById("popspeed");
+let submitButton=document.getElementById("s1");
 /*var port = chrome.extension.connect({
     name: 'situationStorage'
 })*/
 myButton.onclick=changeImg;
+mySpeed.onkeydown=submitSpd;
+mySpeed.onclick=init;
+submitButton.onclick=changeSpd;
 //myButton.onclick=Darkmode;
 if(isDark==true)
 {
@@ -52,7 +57,16 @@ function changeImg()
             chrome.tabs.executeScript(tabs[0].id,{
                 file:"makedark.js",
             })
+            chrome.tabs.executeScript(tabs[0].id,{
+                file:"makePlayerdark.js",
+            })
+            //file:"makePlayerdark.js",
+            /*chrome.tabs.insertCSS(tabs[0].id, 
+                {file: 'darkstyle.css',
+            });*/
         })
+        chrome.tabs.insertCSS(null,{file:"darkstyle.css"});
+        document.getElementById("white").style.display="none";
     }
     else
     {
@@ -71,10 +85,34 @@ function changeImg()
         bg.test(false);
         chrome.tabs.query({active:true,currentWindow:true},function(tabs){
             chrome.tabs.executeScript(tabs[0].id,{
-                file:"autodark.js",
+                file:"makewhite.js",
             })
         })
+        document.getElementById("white").style.display="block";
     }
+}
+function submitSpd()
+{
+    if(event.keyCode==13)
+    {
+        mySpeed.style.webkitTextFillColor="#aqua";
+        document.getElementById("s1").click();
+        
+    }
+}
+function init()
+{
+    mySpeed.value='';
+    //xmySpeed.disabled=false;
+}
+function changeSpd()
+{
+    var spd;
+    spd=mySpeed.value;
+    //mySpeed.disabled=true;
+    //alert(typeof(spd));
+    //alert(spd);
+    mySpeed.blur();
 }
 function Darkmode()
 {

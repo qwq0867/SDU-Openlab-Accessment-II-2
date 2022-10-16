@@ -17,11 +17,17 @@
         border-width: 1px;
         border-radius: 4%;
         border-color:#DDDDDD;
+        text-align: right;
+       
     }
     #Line
     {
         height: 0px;
         border-bottom: #666666;
+    }
+    #s1
+    {
+        display: none;
     }
 </style>
 
@@ -29,9 +35,12 @@
 <body>
 
 <font size="5" id="text1">暗黑模式 &nbsp&nbsp&nbsp&nbsp </font><input type="image" id="a1" src="res/switch-off.png" height="18">  
+<a font="-2" style="display: none;" id="white"><br>暗黑模式已关闭，建议刷新页面！</a>
 <br>
 <hr id="Line">
-<font size="5" id="text2">添加倍速&nbsp</font><input type="text" id="popspeed">&nbsp<font size="1" id="text3">倍速</font>
+<font size="5" id="text2">添加倍速&nbsp</font>
+<input type="text" id="popspeed" maxlength="5" placeholder="enter应用">&nbsp<font size="1" id="text3">倍速</font>
+<input type="submit" id="s1">
 </body>
 <script type="text/javascript" src="popup.js"></script> 
 </html>

@@ -1,9 +1,9 @@
-var darkBg1="#333333";//#FFFFFF
-var darkBgThick="#444444"//#e3e5e7
-var darkText="#BBBBBB"//#000000
-var lineDark="#666666"//#f1f2f3
-var headerDark="#AAAAAA"//#e3e5e7
-var darkBgThin="#000000"//#f6f7f8
+var darkBg1="#FFFFFF";//#FFFFFF
+var darkBgThick="#e3e5e7"//#e3e5e7
+var darkText="#000000"//#000000
+var lineDark="#f1f2f3"//#f1f2f3
+var headerDark="#e3e5e7"//#e3e5e7
+var darkBgThin="#f6f7f8"//#f6f7f8
 /////////////////////////////////////////////////////////////
 var Header=document.getElementsByClassName("large-header");//bg1
 var searchBar=document.getElementsByClassName('nav-search-content');//bg1
@@ -19,7 +19,7 @@ var videoCardSub=document.getElementsByClassName('bili-video-card__wrap __scale-
 ////////////////////////////////////////////////////////////
 document.getElementById('i_cecream').style.backgroundColor=darkBg1;
 document.getElementById('bili-header-banner-img').style.backgroundColor=darkBg1;
-document.getElementById('bili-header-banner-img').style.display='none';
+document.getElementById('bili-header-banner-img').style.display='flex';
 document.body.style.backgroundColor=darkBg1;
 //Header[0].style.backgroundColor=darkBg1;
 //searchBar[0].style.backgroundColor=darkBg1;
