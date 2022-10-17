@@ -57,10 +57,10 @@ function changeImg()
         bg.test(true);
         chrome.tabs.query({active:true,currentWindow:true},function(tabs){
             chrome.tabs.executeScript(tabs[0].id,{
-                file:"makedark.js",
+                file:"func/makedark.js",
             })
             chrome.tabs.executeScript(tabs[0].id,{
-                file:"makePlayerdark.js",
+                file:"func/makePlayerdark.js",
             })
             //file:"makePlayerdark.js",
             /*chrome.tabs.insertCSS(tabs[0].id, 
@@ -92,10 +92,10 @@ function changeImg()
         bg.test(false);
         chrome.tabs.query({active:true,currentWindow:true},function(tabs){
             chrome.tabs.executeScript(tabs[0].id,{
-                file:"makewhite.js",
+                file:"func/makewhite.js",
             })
             chrome.tabs.executeScript(tabs[0].id,{
-                file:"makePlayerwhite.js"
+                file:"func/makePlayerwhite.js"
             })
         })
         chrome.tabs.query({active:false,currentWindow:true},function(thetabs){

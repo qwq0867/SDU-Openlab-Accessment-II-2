@@ -62,7 +62,7 @@ function update()
         element.style.backgroundColor=darkBg1;
     });
     //activity_vote
-    document.getElementById('activity_vote').style.display='none';
+    //document.getElementById('activity_vote').style.display='none';
     //user-name
     Array.from(document.getElementsByClassName("user-name")).forEach(element => {
         element.style.color=darkText;

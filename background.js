@@ -20,10 +20,10 @@ chrome.runtime.onMessage.addListener((req,sender, sendResponse) => {
     {
         chrome.tabs.query({active:true,currentWindow:true},function(tabs){
             chrome.tabs.executeScript(tabs[0].id,{
-                file:"makedark.js",
+                file:"func//makedark.js",
             })
             chrome.tabs.executeScript(tabs[0].id,{
-                file:"makePlayerdark.js"
+                file:"func//makePlayerdark.js"
             })
             /*chrome.tabs.insertCSS(tabs[0].id, {
                 file: 'darkstyle.css'
@@ -43,10 +43,10 @@ chrome.tabs.onActivated.addListener(function(activetab)
         {
             chrome.tabs.query({active:true,currentWindow:true},function(tabs){
                 chrome.tabs.executeScript(tabs[0].id,{
-                    file:"makedark.js",
+                    file:"func//makedark.js",
                 })
                 chrome.tabs.executeScript(tabs[0].id,{
-                    file:"makePlayerdark.js"
+                    file:"func//makePlayerdark.js"
                 })  
             })
         }

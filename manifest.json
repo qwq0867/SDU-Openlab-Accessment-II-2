@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "default_locale":"zh_CN",
     "name":"Dark Mode for balduck",
-    "version":"0.9",
+    "version":"0.9.9",
     "descripition":"实现bilibili网站观看视频的暗黑模式",
     "icons":
     {
