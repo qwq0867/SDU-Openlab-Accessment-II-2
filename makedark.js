@@ -67,7 +67,22 @@ Array.from(document.getElementsByClassName("nav-search-input")).forEach(element 
 Array.from(document.getElementsByClassName("manga")).forEach(element => {
     element.style.backgroundColor=darkBg1;
 });
-setInterval(update,500)
+//right-entry-icon
+Array.from(document.getElementsByClassName("right-entry-icon")).forEach(element => {
+    element.style.color=darkText;
+});
+//减少资源开销
+var setTime;
+setTime=setInterval(update,500);
+window.addEventListener('focus',()=>{
+    setTime=setInterval(update,500);
+    //alert("start");
+})
+window.addEventListener('blur',()=>{
+    window.clearInterval(setTime);
+    //alert("stop!");
+})
+
 function update()
 {
     Array.from(videoCard).forEach(element=> {
@@ -145,5 +160,13 @@ function update()
     //track-switch-wrap
     Array.from(document.getElementsByClassName("track-switch-wrap")).forEach(element => {
         element.style.backgroundColor=darkBgThin;
+    });
+    //title
+    Array.from(document.getElementsByClassName("title")).forEach(element => {
+        element.style.color=darkText;
+    });
+    //trendings-rank search-rank-top
+    Array.from(document.getElementsByClassName("trendings-rank search-rank-top")).forEach(element => {
+        element.style.color='pink';
     });
 }

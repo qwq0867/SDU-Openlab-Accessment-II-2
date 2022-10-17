@@ -20,4 +20,7 @@ chrome.runtime.sendMessage({
 }, res => {
     // 答复
 })
-
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+    if(document.hidden==true)
+        location.reload();
+})

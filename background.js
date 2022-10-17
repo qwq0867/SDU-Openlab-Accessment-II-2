@@ -22,6 +22,9 @@ chrome.runtime.onMessage.addListener((req,sender, sendResponse) => {
             chrome.tabs.executeScript(tabs[0].id,{
                 file:"makedark.js",
             })
+            chrome.tabs.executeScript(tabs[0].id,{
+                file:"makePlayerdark.js"
+            })
             /*chrome.tabs.insertCSS(tabs[0].id, {
                 file: 'darkstyle.css'
             });*/
@@ -29,11 +32,7 @@ chrome.runtime.onMessage.addListener((req,sender, sendResponse) => {
     }
     else
     {
-        chrome.tabs.query({active:true,currentWindow:true},function(tabs){
-            chrome.tabs.executeScript(tabs[0].id,{
-                file:"makewhite.js",
-            })
-        })
+        
     }
 })
 chrome.tabs.onActivated.addListener(function(activetab)
@@ -45,16 +44,15 @@ chrome.tabs.onActivated.addListener(function(activetab)
             chrome.tabs.query({active:true,currentWindow:true},function(tabs){
                 chrome.tabs.executeScript(tabs[0].id,{
                     file:"makedark.js",
+                })
+                chrome.tabs.executeScript(tabs[0].id,{
+                    file:"makePlayerdark.js"
                 })  
             })
         }
         else
         {
-            chrome.tabs.query({active:true,currentWindow:true},function(tabs){
-                chrome.tabs.executeScript(tabs[0].id,{
-                    file:"makewhite.js",
-                })
-            })
+            
         }
     }
 })

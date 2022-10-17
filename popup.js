@@ -14,6 +14,7 @@ mySpeed.onkeydown=submitSpd;
 mySpeed.onclick=init;
 submitButton.onclick=changeSpd;
 //myButton.onclick=Darkmode;
+var buttonCnt=0;
 if(isDark==true)
 {
     document.getElementById("a1").src="res/switch-on.png";
@@ -38,6 +39,7 @@ else
 }
 function changeImg()
 {
+    buttonCnt++;
     if(isDark==false)
     {
         document.getElementById("a1").src="res/switch-on.png";
@@ -66,7 +68,12 @@ function changeImg()
             });*/
         })
         chrome.tabs.insertCSS(null,{file:"darkstyle.css"});
-        document.getElementById("white").style.display="none";
+        if(buttonCnt>=2)
+        {
+            document.getElementById("white").style.color="white";
+            document.getElementById("white").style.backgroundColor="red";
+            document.getElementById("white").textContent='请刷新页面！！';
+        }
     }
     else
     {
@@ -87,6 +94,14 @@ function changeImg()
             chrome.tabs.executeScript(tabs[0].id,{
                 file:"makewhite.js",
             })
+            chrome.tabs.executeScript(tabs[0].id,{
+                file:"makePlayerwhite.js"
+            })
+        })
+        chrome.tabs.query({active:false,currentWindow:true},function(thetabs){
+            thetabs.forEach(element => {
+                chrome.tabs.sendMessage(element.id,'refresh');
+            });
         })
         document.getElementById("white").style.display="block";
     }
@@ -95,7 +110,7 @@ function submitSpd()
 {
     if(event.keyCode==13)
     {
-        mySpeed.style.webkitTextFillColor="#aqua";
+        mySpeed.style.webkitTextFillColor="aqua";
         document.getElementById("s1").click();
         
     }
