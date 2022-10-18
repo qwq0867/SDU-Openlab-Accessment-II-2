@@ -1,8 +1,8 @@
 {
     "manifest_version": 2,
     "default_locale":"zh_CN",
-    "name":"Dark Mode for balduck",
-    "version":"0.9.9",
+    "name":"Dark Mode and Custom speed for balduck",
+    "version":"1.0.0",
     "descripition":"实现bilibili网站观看视频的暗黑模式",
     "icons":
     {
