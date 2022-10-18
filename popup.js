@@ -127,6 +127,13 @@ function changeSpd()
     //mySpeed.disabled=true;
     //alert(typeof(spd));
     //alert(spd);
+    chrome.tabs.query({active:true,currentWindow:true},function(thetabs){
+        let msg={
+            info:'popup.js',
+            spdChg:spd
+        }
+        chrome.tabs.sendMessage(thetabs[0].id,msg);
+    })
     mySpeed.blur();
 }
 function Darkmode()
