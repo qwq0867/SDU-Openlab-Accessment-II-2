@@ -100,7 +100,10 @@ function changeImg()
         })
         chrome.tabs.query({active:false,currentWindow:true},function(thetabs){
             thetabs.forEach(element => {
-                chrome.tabs.sendMessage(element.id,'refresh');
+                let msg={
+                    info:"refresh",
+                }
+                chrome.tabs.sendMessage(element.id,msg);
             });
         })
         document.getElementById("white").style.display="block";

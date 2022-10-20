@@ -22,6 +22,7 @@ Array.from(document.getElementsByClassName("bpx-player-video-btn-dm")).forEach(e
     element.style.borderColor=darkBg1;
 });
 //tag-link
+if(document.getElementsByClassName("tag-link")!=null)
 Array.from(document.getElementsByClassName("tag-link")).forEach(element => {
     element.style.backgroundColor=darkBg1;
 });

@@ -21,6 +21,11 @@
     // 答复
 })*/
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+    if(request.info=="refresh")
+    {
+        if(document.hidden==true)
+        location.reload();
+    }
     if(request.info=='popup.js')
     {
         if(document.getElementById('i_cecream')==null)
