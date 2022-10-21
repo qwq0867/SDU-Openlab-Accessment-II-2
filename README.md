@@ -10,7 +10,7 @@ Started date: Oct 8th,2022.
 
 Name: Dark Mode for Balduck
 
-The latest version: 1.0.1
+The latest version: 1.0.2
 
 Description: A plugin for Chrome with some simple functions such as provide a dark mode for bilibili.
 

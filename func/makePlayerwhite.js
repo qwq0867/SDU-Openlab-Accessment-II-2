@@ -6,6 +6,7 @@ var headerDark="#e3e5e7"//#e3e5e7
 var darkBgThin="#f6f7f8"//#f6f7f8
 //////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
+document.body.style.filter="brightness(1.0)";
 document.getElementById('app').style.backgroundColor=darkBg1;
 //bpx-player-sending-bar
 Array.from(document.getElementsByClassName("bpx-player-sending-bar")).forEach(element => {

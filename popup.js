@@ -121,6 +121,7 @@ function submitSpd()
 function init()
 {
     mySpeed.value='';
+    mySpeed.style.webkitTextFillColor="black";
     //xmySpeed.disabled=false;
 }
 function changeSpd()

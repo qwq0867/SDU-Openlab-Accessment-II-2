@@ -4,6 +4,7 @@ var darkText="#BBBBBB"//#000000
 var lineDark="#666666"//#f1f2f3
 var headerDark="#AAAAAA"//#e3e5e7
 var darkBgThin="#000000"//#f6f7f8
+document.body.style.filter="brightness(0.65)";
 dark();
 function dark()
 {

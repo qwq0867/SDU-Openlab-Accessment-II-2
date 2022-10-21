@@ -1,3 +1,5 @@
+
+
 var darkBg1="#333333";//#FFFFFF
 var darkBgThick="#444444"//#e3e5e7
 var darkText="#BBBBBB"//#000000
@@ -6,6 +8,7 @@ var headerDark="#AAAAAA"//#e3e5e7
 var darkBgThin="#000000"//#f6f7f8
 //////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////
+document.body.style.filter="brightness(0.65)";
 document.getElementById('app').style.backgroundColor=darkBg1;
 //bpx-player-sending-bar
 Array.from(document.getElementsByClassName("bpx-player-sending-bar")).forEach(element => {
@@ -51,7 +54,7 @@ chrome.runtime.sendMessage({
 }, res => {
     if(res==false)
     {
-        t=2147483647;
+        t=10000000;
     }
 })
 function update()

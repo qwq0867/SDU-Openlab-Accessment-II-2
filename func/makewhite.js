@@ -5,6 +5,7 @@ var lineDark="#f1f2f3"//#f1f2f3
 var headerDark="#e3e5e7"//#e3e5e7
 var darkBgThin="#f6f7f8"//#f6f7f8
 /////////////////////////////////////////////////////////////
+document.body.style.filter="brightness(1.0)";
 var Header=document.getElementsByClassName("large-header");//bg1
 var searchBar=document.getElementsByClassName('nav-search-content');//bg1
 
@@ -67,7 +68,6 @@ Array.from(document.getElementsByClassName("nav-search-input")).forEach(element 
 Array.from(document.getElementsByClassName("manga")).forEach(element => {
     element.style.backgroundColor=darkBg1;
 });
-//减少资源开销
 update();
 function update()
 {
@@ -155,4 +155,14 @@ function update()
     Array.from(document.getElementsByClassName("trendings-rank search-rank-top")).forEach(element => {
         element.style.color='pink';
     });
+    var t=5000;
+    var setTime;
+    setTime=setInterval(qtab,t);
+}
+function qtab()
+{
+    if(document.hidden==true)
+    {
+        location.reload();
+    }
 }

@@ -20,7 +20,7 @@ function test(msg)
         sendToAuto=true;
     }
 }
-/*chrome.runtime.onMessage.addListener((req,sender, sendResponse) => {
+chrome.runtime.onMessage.addListener((req,sender, sendResponse) => {
     sendResponse(sendToAuto);
     if(req.info=='content.js')
     if(needDark==true)
@@ -34,14 +34,14 @@ function test(msg)
             })
             /*chrome.tabs.insertCSS(tabs[0].id, {
                 file: 'darkstyle.css'
-            });
+            });*/
         })
     }
     else
     {
         
     }
-})*/
+})
 chrome.tabs.onActivated.addListener(function(activetab)
 {
     if(activetab.tabId)

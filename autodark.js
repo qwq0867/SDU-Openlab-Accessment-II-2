@@ -15,11 +15,12 @@
     }
 }*/
 
-/*chrome.runtime.sendMessage({
+chrome.runtime.sendMessage({
     info: "content.js"
 }, res => {
-    // 答复
-})*/
+    
+})
+var cnt='0';
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if(request.info=="refresh")
     {
@@ -35,17 +36,20 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
             //mySpeed.dataValue=parseFloat(request.spdChg);
             mySpeed.setAttribute("data-value",request.spdChg);
             mySpeed.textContent=request.spdChg+'x';
-
+            cnt++;
+            mySpeed.id="my"+request.spdChg+cnt;
             /*var nowSpd=document.getElementsByClassName("bpx-player-ctrl-playbackrate-menu-item bpx-state-active");
             Array.from(nowSpd).forEach(element=>{
                 element.setAttribute("data-value",request.spdChg);
                 element.textContent=request.spdChg+'x';
             })*/
-
+            
             
             console.log("create!");
             var speedBar=document.getElementsByClassName("bpx-player-ctrl-playbackrate-menu")
             speedBar[0].appendChild(mySpeed);
+            //document.querySelector("bwp-video").playbackRate=parseFloat(request.spdChg);
+            document.getElementById("my"+request.spdChg+cnt).click();
         }
     }
 })
